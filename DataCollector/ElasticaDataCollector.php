@@ -82,4 +82,8 @@ class ElasticaDataCollector extends DataCollector
     {
         return 'elastica';
     }
+
+    public function reset()
+    {
+    }
 }
