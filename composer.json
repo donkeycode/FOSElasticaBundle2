@@ -13,11 +13,11 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "symfony/framework-bundle": "^2.8|^3.2|^4.4",
-        "symfony/console": "^2.8|^3.2|^4.4",
-        "symfony/dependency-injection": "^2.8|^3.2|^4.4",
-        "symfony/options-resolver" : "^2.8|^3.2|^4.4",
-        "symfony/property-access": "^2.8|^3.2|^4.4",
+        "symfony/framework-bundle": "^2.8|^3.2|^4.4|^5.4",
+        "symfony/console": "^2.8|^3.2|^4.4|^5.4",
+        "symfony/dependency-injection": "^2.8|^3.2|^4.4|^5.4",
+        "symfony/options-resolver" : "^2.8|^3.2|^4.4|^5.4",
+        "symfony/property-access": "^2.8|^3.2|^4.4|^5.4",
         "psr/log": "^1.0",
         "ruflin/elastica": "*"
     },
@@ -32,12 +32,12 @@
         "propel/propel": "*",
         "pagerfanta/pagerfanta": "^1.0.5",
         "knplabs/knp-components": "^1.2",
-        "symfony/browser-kit": "^2.8|^3.2|^4.4",
-        "symfony/expression-language" : "^2.8|^3.2|^4.4",
+        "symfony/browser-kit": "^2.8|^3.2|^4.4|^5.4",
+        "symfony/expression-language" : "^2.8|^3.2|^4.4|^5.4",
         "symfony/twig-bundle": "^2.8|^3.4|^4.4",
-        "symfony/serializer": "^2.8|^3.2|^4.4",
-        "symfony/yaml": "^2.8|^3.2|^4.4",
-        "symfony/stopwatch": "^2.8|^3.2|^4.4"
+        "symfony/serializer": "^2.8|^3.2|^4.4|^5.4",
+        "symfony/yaml": "^2.8|^3.2|^4.4|^5.4",
+        "symfony/stopwatch": "^2.8|^3.2|^4.4|^5.4"
     },
     "suggest": {
         "enqueue/elastica-bundle": "The bundle adds extra features to FOSElasticaBundle bundle. Aimed to improve performance."
