@@ -199,8 +199,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getTypesNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('types');
+        $builder = new TreeBuilder('types');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('types');
+        }
 
         $node
             ->useAttributeAsKey('name')
@@ -294,8 +299,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getPropertiesNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('properties');
+        $builder = new TreeBuilder('properties');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('properties');
+        }
 
         $node
             ->useAttributeAsKey('name')
@@ -310,8 +320,13 @@ class Configuration implements ConfigurationInterface
      */
     public function getDynamicTemplateNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('dynamic_templates');
+        $builder = new TreeBuilder('dynamic_templates');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('dynamic_templates');
+        }
 
         $node
             ->prototype('array')
@@ -341,8 +356,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getIdNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_id');
+        $builder = new TreeBuilder('_id');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_id');
+        }
 
         $node
             ->children()
@@ -358,8 +378,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getSourceNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_source');
+        $builder = new TreeBuilder('_source');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_source');
+        }
 
         $node
             ->children()
@@ -385,8 +410,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getBoostNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_boost');
+        $builder = new TreeBuilder('_boost');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_boost');
+        }
 
         $node
             ->children()
@@ -403,8 +433,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getRoutingNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_routing');
+        $builder = new TreeBuilder('_routing');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_routing');
+        }
 
         $node
             ->children()
@@ -421,8 +456,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getParentNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_parent');
+        $builder = new TreeBuilder('_parent');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_parent');
+        }
 
         $node
             ->children()
@@ -440,8 +480,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getAllNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_all');
+        $builder = new TreeBuilder('_all');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_all');
+        }
 
         $node
             ->children()
@@ -458,8 +503,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getTimestampNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_timestamp');
+        $builder = new TreeBuilder('_timestamp');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_timestamp');
+        }
 
         $node
             ->children()
@@ -479,8 +529,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getTtlNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('_ttl');
+        $builder = new TreeBuilder('_ttl');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('_ttl');
+        }
 
         $node
             ->children()
@@ -499,8 +554,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getPersistenceNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('persistence');
+        $builder = new TreeBuilder('persistence');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('persistence');
+        }
 
         $node
             ->validate()
@@ -603,8 +663,13 @@ class Configuration implements ConfigurationInterface
      */
     protected function getSerializerNode()
     {
-        $builder = new TreeBuilder();
-        $node = $builder->root('serializer');
+        $builder = new TreeBuilder('serializer');
+
+        if (method_exists($builder, 'getRootNode')) {
+            $node = $builder->getRootNode();
+        } else {
+            $node = $builder->root('serializer');
+        }
 
         $node
             ->addDefaultsIfNotSet()
