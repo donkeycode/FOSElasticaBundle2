@@ -34,8 +34,13 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('fos_elastica', 'array');
+        $treeBuilder = new TreeBuilder('fos_elastica', 'array');
+
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            $rootNode = $treeBuilder->root('fos_elastica');
+        }
 
         $this->addClientsSection($rootNode);
         $this->addIndexesSection($rootNode);
