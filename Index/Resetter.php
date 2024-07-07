@@ -94,7 +94,7 @@ class Resetter
         }
 
         $event = new IndexResetEvent($indexName, $populating, $force);
-        $this->dispatcher->dispatch(IndexResetEvent::PRE_INDEX_RESET, $event);
+        $this->dispatcher->dispatch($event, IndexResetEvent::PRE_INDEX_RESET);
 
         $mapping = $this->mappingBuilder->buildIndexMapping($indexConfig);
         $index->create($mapping, true);
@@ -103,7 +103,7 @@ class Resetter
             $this->aliasProcessor->switchIndexAlias($indexConfig, $index, $force);
         }
 
-        $this->dispatcher->dispatch(IndexResetEvent::POST_INDEX_RESET, $event);
+        $this->dispatcher->dispatch($event, IndexResetEvent::POST_INDEX_RESET);
     }
 
     /**
@@ -125,7 +125,7 @@ class Resetter
         $type = $index->getType($typeName);
 
         $event = new TypeResetEvent($indexName, $typeName);
-        $this->dispatcher->dispatch(TypeResetEvent::PRE_TYPE_RESET, $event);
+        $this->dispatcher->dispatch($event, TypeResetEvent::PRE_TYPE_RESET);
 
         if (!empty($settings)) {
             unset($settings['number_of_shards'], $settings['index']['number_of_shards']);
@@ -142,7 +142,7 @@ class Resetter
 
         $type->setMapping($mapping);
 
-        $this->dispatcher->dispatch(TypeResetEvent::POST_TYPE_RESET, $event);
+        $this->dispatcher->dispatch($event, TypeResetEvent::POST_TYPE_RESET);
     }
 
     /**

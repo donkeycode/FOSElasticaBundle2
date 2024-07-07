@@ -2,7 +2,7 @@
 
 namespace FOS\ElasticaBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,7 +12,7 @@ use FOS\ElasticaBundle\Index\Resetter;
 /**
  * Reset search indexes.
  */
-class ResetCommand extends ContainerAwareCommand
+class ResetCommand extends Command
 {
     /**
      * @var IndexManager

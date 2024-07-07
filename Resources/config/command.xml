@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults autowire="true" autoconfigure="true"/>
+        <service id="FOS\ElasticaBundle\Command\PopulateCommand" autowire="true" autoconfigure="true">
+            <argument key="$indexManager" type="service" id="fos_elastica.index_manager"></argument>
+            <argument key="$providerRegistry" type="service" id="fos_elastica.provider_registry"></argument>
+            <argument key="$pagerProviderRegistry" type="service" id="fos_elastica.pager_provider_registry"></argument>
+            <argument key="$pagerPersisterRegistry" type="service" id="fos_elastica.pager_persister_registry"></argument>
+            <argument key="$resetter" type="service" id="fos_elastica.resetter"></argument>
+        </service>
+    </services>
+</container>

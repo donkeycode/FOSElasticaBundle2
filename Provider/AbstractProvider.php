@@ -159,6 +159,8 @@ abstract class AbstractProvider implements ProviderInterface
      */
     protected function resolveOptions(array $options)
     {
+        unset($this->baseOptions['pager_provider']);
+        
         return $this->resolver->resolve(array_merge($this->baseOptions, $options));
     }
 }

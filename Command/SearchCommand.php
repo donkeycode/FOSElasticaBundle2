@@ -2,7 +2,7 @@
 
 namespace FOS\ElasticaBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,7 +13,7 @@ use Elastica\Result;
 /**
  * Searches a type.
  */
-class SearchCommand extends ContainerAwareCommand
+class SearchCommand extends Command
 {
     /**
      * @see Command
